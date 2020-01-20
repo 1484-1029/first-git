@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>タイトル</title>
+  </head>
+  <body>
+    <form action="/" method="POST">
+      <label>名前: <input type="text" name="target_name"></label>
+      <input type="submit" value="送信">
+    </form>
+
+    <header>
+
+          <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a href="contact.html" class="navbar-brand"><%= サンプル株式会社 %></a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-bar">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">会社情報</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">ニュース</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">採用情報</a></li>
+                <li class="nav-item active"><a href="#" class="nav-link"><%= お問い合わせ %></a></li>
+              </ul>
+           </div>
+          </nav>
+
+        </header>
+<% name = '太郎' %>
+
+    
+<% time_japan = Time.now.getlocal("+09:00") %>
+
+    <p>今は
+<%= time_japan.hour %>
+時です。</p>
+    
+<% if 6 <= time_japan.hour && time_japan.hour < 12 %>
+
+      <p>おはよう、
+<%= name %>
+さん</p>
+    
+<% elsif 12 <= time_japan.hour && time_japan.hour < 18 %>
+
+      <p>こんにちは、
+<%= name %>
+さん</p>
+    
+<% else %>
+
+      <p>こんばんは、
+<%= name %>
+さん</p>
+    
+<% end %>
+
+  </body>
+</html>
